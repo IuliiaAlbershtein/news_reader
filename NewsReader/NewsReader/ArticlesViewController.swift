@@ -58,7 +58,7 @@ class ArticlesViewController: UITableViewController {
         // Configure the cell with the Item
             cell.titleLabel.text = article.title
             cell.descriptionLabel.text = article.description
-            cell.dateLabel.text = "$\(article.datePublished)"
+            cell.dateLabel.text = "\(article.datePublished)"
 
         return cell
     }
