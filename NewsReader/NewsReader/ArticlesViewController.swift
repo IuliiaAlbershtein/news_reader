@@ -17,12 +17,13 @@ class ArticlesViewController: UITableViewController {
 
         //var articleList = ArticleStore()
       
-        Downloader.load(URL: url!, articleList: articleStore)
+        Downloader.load(URLData: url!, articleList: articleStore)
         do {
-            sleep(1)
+            sleep(4)
         }
         print("\(articleStore.allArticles)")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,7 +65,7 @@ class ArticlesViewController: UITableViewController {
             cell.titleLabel.numberOfLines = 2
             cell.descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             cell.descriptionLabel.numberOfLines = 3
-        
+            cell.newsImageView.image = article.image
         return cell
     }
     

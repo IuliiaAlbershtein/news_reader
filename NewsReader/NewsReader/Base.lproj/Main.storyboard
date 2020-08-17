@@ -40,6 +40,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mju-tI-Ozc">
+                                            <rect key="frame" x="20" y="23" width="130" height="77"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Lac-pp-1Gv" firstAttribute="bottom" secondItem="5VD-ao-PgQ" secondAttribute="bottomMargin" id="5RI-hk-HaA"/>
@@ -56,6 +60,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="Lac-pp-1Gv" id="qg8-YC-lxv"/>
                                     <outlet property="descriptionLabel" destination="Qqn-ej-t3X" id="bIQ-Ot-FTM"/>
+                                    <outlet property="newsImageView" destination="Mju-tI-Ozc" id="jM7-U3-hlE"/>
                                     <outlet property="titleLabel" destination="o9P-R3-av6" id="od1-cl-uo0"/>
                                 </connections>
                             </tableViewCell>

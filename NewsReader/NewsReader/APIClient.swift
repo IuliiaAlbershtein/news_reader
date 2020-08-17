@@ -12,10 +12,10 @@ import SwiftyJSON
 //http://newsapi.org/v2/everything?q=Apple&from=2020-08-11&sortBy=popularity&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d
 
 class Downloader {
-    class func load(URL: URL, articleList: ArticleStore) {
+    class func load(URLData: URL, articleList: ArticleStore) {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-        var request = URLRequest(url: URL)
+        var request = URLRequest(url: URLData)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data: Data!, response: URLResponse!, error: Error!) -> Void in
             if (error == nil) {
@@ -42,12 +42,31 @@ class Downloader {
                     //print("\(article["title"].stringValue)")
                     let article = Article(articleData["title"].stringValue, articleData["description"].stringValue, articleData["content"].stringValue, yourDate!);
                     articleList.addArticle(newArticle: article)
-                   
+                    let imageUrl = URL(string: articleData["urlToImage"].stringValue)
+                    loadImage(URL: imageUrl!, article: article)
                 }
-                
-                
             }
             else {
+                // Failure
+                print("Failure: %@", error.localizedDescription);
+            }
+        })
+        task.resume()
+    }
+    class func loadImage(URL: URL, article: Article) {
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        var request = URLRequest(url: URL)
+        request.httpMethod = "GET"
+        let task = session.dataTask(with: request, completionHandler: { (data: Data!, response: URLResponse!, error: Error!) -> Void in
+            if (error == nil) {
+                // Success
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                print("Success: \(statusCode)")
+                //object creation
+                let image = UIImage(data: data)
+                article.image = image
+            } else {
                 // Failure
                 print("Failure: %@", error.localizedDescription);
             }
