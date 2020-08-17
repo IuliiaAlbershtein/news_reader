@@ -29,13 +29,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqn-ej-t3X">
-                                            <rect key="frame" x="20" y="77" width="374" height="20.5"/>
+                                            <rect key="frame" x="20" y="44" width="374" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lac-pp-1Gv">
-                                            <rect key="frame" x="20" y="142" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="142.5" width="374" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -47,8 +47,9 @@
                                         <constraint firstItem="Qqn-ej-t3X" firstAttribute="leading" secondItem="Lac-pp-1Gv" secondAttribute="leading" id="ETc-Jy-Xf2"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="top" secondItem="5VD-ao-PgQ" secondAttribute="topMargin" id="GLh-8w-XvH"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="leading" secondItem="Qqn-ej-t3X" secondAttribute="leading" id="HgY-bN-wuT"/>
+                                        <constraint firstItem="Qqn-ej-t3X" firstAttribute="top" secondItem="o9P-R3-av6" secondAttribute="bottom" constant="10" id="Hgg-BC-DDr"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="o9P-R3-av6" secondAttribute="trailing" id="VN7-11-LHe"/>
-                                        <constraint firstItem="Qqn-ej-t3X" firstAttribute="centerY" secondItem="5VD-ao-PgQ" secondAttribute="centerY" id="r7f-zW-vla"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Lac-pp-1Gv" secondAttribute="trailing" id="hCy-5N-ELT"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="leading" secondItem="5VD-ao-PgQ" secondAttribute="leadingMargin" id="rBN-qE-dLh"/>
                                     </constraints>
                                 </tableViewCellContentView>
