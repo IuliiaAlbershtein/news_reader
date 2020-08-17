@@ -27,7 +27,7 @@ class ArticlesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = 225
+        tableView.rowHeight = 205
         DownloadData()
         
     }
