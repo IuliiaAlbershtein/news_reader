@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SYi-Bf-6tv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,27 +15,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="105" id="Qho-aG-HBp" customClass="ArticleCell" customModule="NewsReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="174" id="Qho-aG-HBp" customClass="ArticleCell" customModule="NewsReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qho-aG-HBp" id="5VD-ao-PgQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9P-R3-av6">
-                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="20" y="11" width="374" height="23"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqn-ej-t3X">
-                                            <rect key="frame" x="20" y="42" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="77" width="374" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lac-pp-1Gv">
-                                            <rect key="frame" x="20" y="73" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="142" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -43,9 +43,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Lac-pp-1Gv" firstAttribute="bottom" secondItem="5VD-ao-PgQ" secondAttribute="bottomMargin" id="5RI-hk-HaA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Qqn-ej-t3X" secondAttribute="trailing" id="7AV-LM-hJg"/>
                                         <constraint firstItem="Qqn-ej-t3X" firstAttribute="leading" secondItem="Lac-pp-1Gv" secondAttribute="leading" id="ETc-Jy-Xf2"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="top" secondItem="5VD-ao-PgQ" secondAttribute="topMargin" id="GLh-8w-XvH"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="leading" secondItem="Qqn-ej-t3X" secondAttribute="leading" id="HgY-bN-wuT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="o9P-R3-av6" secondAttribute="trailing" id="VN7-11-LHe"/>
                                         <constraint firstItem="Qqn-ej-t3X" firstAttribute="centerY" secondItem="5VD-ao-PgQ" secondAttribute="centerY" id="r7f-zW-vla"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="leading" secondItem="5VD-ao-PgQ" secondAttribute="leadingMargin" id="rBN-qE-dLh"/>
                                     </constraints>

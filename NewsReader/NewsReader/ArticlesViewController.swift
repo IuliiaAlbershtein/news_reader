@@ -26,8 +26,9 @@ class ArticlesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = 85
+        tableView.rowHeight = 125
         DownloadData()
+        
     }
     
     override func tableView(_ tableView: UITableView,
@@ -59,7 +60,11 @@ class ArticlesViewController: UITableViewController {
             cell.titleLabel.text = article.title
             cell.descriptionLabel.text = article.description
             cell.dateLabel.text = "\(article.datePublished)"
-
+            cell.titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            cell.titleLabel.numberOfLines = 3
+            //cell.descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            //cell.descriptionLabel.numberOfLines = 3
+        
         return cell
     }
     
