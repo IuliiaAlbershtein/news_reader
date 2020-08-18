@@ -26,7 +26,13 @@ class ArticlesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //tableView.contentInset.top = 10
+        //tableView.contentInset.top = UIApplication.sharedApplication().statusBarFrame.height
+        
+        //tableView.contentInset = UIEdgeInsets(top: 20, left: 0.0, bottom: 0.0, right: 0.0);
+        //tableView.scrollIndicatorInsets = tableView.contentInset
+        
+        
         tableView.rowHeight = 205
         DownloadData()
         
