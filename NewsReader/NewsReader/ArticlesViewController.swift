@@ -75,6 +75,8 @@ class ArticlesViewController: UITableViewController {
             cell.titleLabel.numberOfLines = 2
             cell.descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             cell.descriptionLabel.numberOfLines = 4
+            cell.descriptionLabel.adjustsFontSizeToFitWidth = false
+            cell.descriptionLabel.lineBreakMode = .byTruncatingTail
             cell.newsImageView.image = article.image
         return cell
     }
