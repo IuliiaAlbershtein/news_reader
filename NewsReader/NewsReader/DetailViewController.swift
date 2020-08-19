@@ -12,20 +12,34 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var dateDetail: UILabel!
     
-    @IBOutlet weak var descriptionDetail: UILabel!
+    //@IBOutlet weak var descriptionDetail: UILabel!
     
     @IBOutlet weak var contentDetail: UILabel!
     
     //var articleStore: ArticleStore!
-    //var article: Article!
+    var article: Article!
     //var article = articleStore.allArticles[indexPath.row]
+    /*func heightForView(text: String, width: CGFloat) -> CGFloat{
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.text = text
 
+        label.sizeToFit()
+        return label.frame.height
+    }*/
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateFormatter.locale = Locale(identifier: "en_US")
+            let formattedDate = dateFormatter.string(from: article.datePublished)
             titleDetail.text = article.title
-            dateDetail.text = "\(article.datePublished)"
-            descriptionDetail.text = article.description
+            //titleDetail.  heightForView(text: article.title, width: 100.0)
+            dateDetail.text = "\(formattedDate)"
+            //descriptionDetail.text = article.description
             contentDetail.text = article.content
+            
         }
 }

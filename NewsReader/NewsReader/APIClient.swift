@@ -36,7 +36,8 @@ class Downloader {
                     let date = articleData["publishedAt"].stringValue
                     let dateFor: DateFormatter = DateFormatter()
                     dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-
+                    
+                    
                     let yourDate: Date? = dateFor.date(from: date)
                    // print("\(String(describing: yourDate))")
                     //print("\(article["title"].stringValue)")

@@ -33,7 +33,7 @@ class ArticlesViewController: UITableViewController {
         //tableView.scrollIndicatorInsets = tableView.contentInset
         
         
-        tableView.rowHeight = 205
+        tableView.rowHeight = 190
         DownloadData()
         
     }
@@ -62,18 +62,39 @@ class ArticlesViewController: UITableViewController {
 
         //cell.textLabel?.text = item.name
         //cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        let formattedDate = dateFormatter.string(from: article.datePublished)
         // Configure the cell with the Item
             cell.titleLabel.text = article.title
             cell.descriptionLabel.text = article.description
-            cell.dateLabel.text = "\(article.datePublished)"
+            cell.dateLabel.text = "\(formattedDate)"
             cell.titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             cell.titleLabel.numberOfLines = 2
             cell.descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-            cell.descriptionLabel.numberOfLines = 3
+            cell.descriptionLabel.numberOfLines = 4
             cell.newsImageView.image = article.image
         return cell
     }
+   
     
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // If the triggered segue is the "showItem" segue
+        switch segue.identifier {
+        case "showArticle":
+            // Figure out which row was just tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
 
+                // Get the item associated with this row and pass it along
+                let article = articleStore.allArticles[row]
+                let detailViewController
+                        = segue.destination as! DetailViewController
+                detailViewController.article = article
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+            }
+    }
+}
