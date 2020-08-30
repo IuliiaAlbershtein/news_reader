@@ -8,6 +8,8 @@
 
 import UIKit
 class DetailViewController: UIViewController {
+    @IBOutlet weak var imageDetailView: UIImageView!
+    
     @IBOutlet weak var titleDetail: UILabel!
     
     @IBOutlet weak var dateDetail: UILabel!
@@ -40,6 +42,6 @@ class DetailViewController: UIViewController {
             dateDetail.text = "\(formattedDate)"
             //descriptionDetail.text = article.description
             contentDetail.text = article.content
-            
+            imageDetailView.image = article.image
         }
 }

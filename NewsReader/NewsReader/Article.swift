@@ -15,7 +15,6 @@ class Article {
     let datePublished: Date
     var image: UIImage?
     
-    
     init(_ title: String, _ description: String, _ content: String, _ datePublished: Date) {
             self.title = title
             self.description = description
@@ -24,4 +23,3 @@ class Article {
             self.image = nil
         }
 }
-

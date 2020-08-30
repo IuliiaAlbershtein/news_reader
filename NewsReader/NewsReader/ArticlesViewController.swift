@@ -12,8 +12,8 @@ class ArticlesViewController: UITableViewController {
     // property of ArticleViewController
     var articleStore: ArticleStore!
     
-    func DownloadData() {
-    let url = URL(string: "http://newsapi.org/v2/everything?q=Apple&from=2020-08-11&sortBy=popularity&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
+    func downloadData(_ weblink: String) {
+    let url = URL(string: weblink)
 
         //var articleList = ArticleStore()
       
@@ -32,10 +32,24 @@ class ArticlesViewController: UITableViewController {
         //tableView.contentInset = UIEdgeInsets(top: 20, left: 0.0, bottom: 0.0, right: 0.0);
         //tableView.scrollIndicatorInsets = tableView.contentInset
         
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:
+                                           #selector(handleRefreshControl),
+                                           for: .valueChanged)
+        
         
         tableView.rowHeight = 190
-        DownloadData()
         
+        downloadData("http://newsapi.org/v2/everything?q=Apple&from=2020-08-11&sortBy=popularity&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
+        
+    }
+    @objc func handleRefreshControl() {
+        print("hghghg")
+        articleStore.removeArticles()
+        
+        downloadData("http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
+        tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
     }
     
     override func tableView(_ tableView: UITableView,
