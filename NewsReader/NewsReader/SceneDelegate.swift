@@ -21,7 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          // Create an object ArticleStore
             let articleStore = ArticleStore()
         // Access the ArticlesViewController and set its article store
-            let articleController = window!.rootViewController as! ArticlesViewController
+        let tabViewArray = window?.rootViewController as! UITabBarController
+      
+        //print(abd.viewControllers)
+        let articleController = tabViewArray.viewControllers![0] as! ArticlesViewController
             articleController.articleStore = articleStore
     }
 

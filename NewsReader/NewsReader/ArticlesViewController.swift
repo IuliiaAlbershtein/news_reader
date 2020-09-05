@@ -113,4 +113,9 @@ class ArticlesViewController: UITableViewController {
             preconditionFailure("Unexpected segue identifier.")
             }
     }
+    
+    @IBAction func ButtonClicked(_ sender: Any) {
+        print("wuf")
+    }
+    
 }
