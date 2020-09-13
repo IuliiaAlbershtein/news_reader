@@ -22,6 +22,7 @@
 		F837472424E3FB4A00A82A2D /* NewsReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837472324E3FB4A00A82A2D /* NewsReaderUITests.swift */; };
 		F837473224E3FBDE00A82A2D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837473124E3FBDE00A82A2D /* APIClient.swift */; };
 		F86577132503C7D700311573 /* ArticleToReadLater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86577122503C7D700311573 /* ArticleToReadLater.swift */; };
+		F88FE85D250E738F004B3CBE /* ArticleCellRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FE85C250E738F004B3CBE /* ArticleCellRead.swift */; };
 		F8EB94A524EBFC020061DA66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB94A424EBFC020061DA66 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		F837472524E3FB4A00A82A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F837473124E3FBDE00A82A2D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F86577122503C7D700311573 /* ArticleToReadLater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleToReadLater.swift; sourceTree = "<group>"; };
+		F88FE85C250E738F004B3CBE /* ArticleCellRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleCellRead.swift; path = ../ArticleCellRead.swift; sourceTree = "<group>"; };
 		F8EB94A424EBFC020061DA66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				F86577122503C7D700311573 /* ArticleToReadLater.swift */,
 				F8EB94A424EBFC020061DA66 /* DetailViewController.swift */,
 				F820CF6924E6B8780090967B /* ArticleCell.swift */,
+				F88FE85C250E738F004B3CBE /* ArticleCellRead.swift */,
 				F837473124E3FBDE00A82A2D /* APIClient.swift */,
 				F820CF6324E575D80090967B /* Article.swift */,
 				F820CF6524E575F00090967B /* ArticleStore.swift */,
@@ -295,6 +298,7 @@
 				F837470224E3FB4600A82A2D /* AppDelegate.swift in Sources */,
 				F837470424E3FB4600A82A2D /* SceneDelegate.swift in Sources */,
 				F820CF6824E69AD10090967B /* ArticlesViewController.swift in Sources */,
+				F88FE85D250E738F004B3CBE /* ArticleCellRead.swift in Sources */,
 				F837473224E3FBDE00A82A2D /* APIClient.swift in Sources */,
 				F820CF6624E575F00090967B /* ArticleStore.swift in Sources */,
 				F820CF6424E575D80090967B /* Article.swift in Sources */,

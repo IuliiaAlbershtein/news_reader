@@ -157,17 +157,16 @@
             </objects>
             <point key="canvasLocation" x="1947.826086956522" y="-44.196428571428569"/>
         </scene>
-        <!--Item-->
+        <!--FFFFF-->
         <scene sceneID="180-ea-NhK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pAG-9A-gqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tableViewController id="iOP-kU-QnN" sceneMemberID="viewController">
+                <tableViewController id="iOP-kU-QnN" customClass="ArticleToReadLater" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="54X-bA-jYE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="174" id="tcK-2I-nRM" userLabel="ArticleCellRead" customClass="ArticleCell" customModule="NewsReader" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCellRead" rowHeight="174" id="tcK-2I-nRM" customClass="ArticleCellRead" customModule="NewsReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcK-2I-nRM" id="WIY-Rc-eSL">
@@ -200,6 +199,7 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="l10-05-qaN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WIY-Rc-eSL" secondAttribute="leading" constant="20" symbolic="YES" id="8Zo-Qo-eif"/>
                                         <constraint firstItem="1NE-3k-2ke" firstAttribute="leading" secondItem="WIY-Rc-eSL" secondAttribute="leadingMargin" id="ATz-ig-1jq"/>
                                         <constraint firstItem="1NE-3k-2ke" firstAttribute="top" secondItem="WIY-Rc-eSL" secondAttribute="topMargin" id="C4z-Qe-CvT"/>
                                         <constraint firstItem="bxB-mm-dUS" firstAttribute="top" secondItem="1NE-3k-2ke" secondAttribute="bottom" constant="5" id="Cuf-6A-hsC"/>
@@ -216,10 +216,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="l10-05-qaN" id="lQL-uO-nLp"/>
-                                    <outlet property="descriptionLabel" destination="bxB-mm-dUS" id="Y7d-Io-S9R"/>
-                                    <outlet property="newsImageView" destination="TYI-2W-OEJ" id="EFM-Wa-aEC"/>
-                                    <outlet property="titleLabel" destination="1NE-3k-2ke" id="cxe-Gq-GJN"/>
+                                    <outlet property="dateReadLaterLabel" destination="l10-05-qaN" id="1PW-R9-MnU"/>
+                                    <outlet property="descriptionReadLaterLabel" destination="bxB-mm-dUS" id="LfR-cP-sAE"/>
+                                    <outlet property="newsImageReadLaterView" destination="TYI-2W-OEJ" id="yot-5q-Idx"/>
+                                    <outlet property="titleReadLaterLabel" destination="1NE-3k-2ke" id="cur-5b-I3y"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -228,11 +228,12 @@
                             <outlet property="delegate" destination="iOP-kU-QnN" id="0ze-Lc-Hcv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="NOF-yC-fOc"/>
+                    <tabBarItem key="tabBarItem" title="FFFFF" id="NOF-yC-fOc"/>
                     <navigationItem key="navigationItem" id="zYc-vJ-PCt"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAG-9A-gqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965" y="751"/>
+            <point key="canvasLocation" x="963.76811594202911" y="750.66964285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OwF-gZ-7cd">
@@ -240,6 +241,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1lY-bn-lpm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c6Q-BH-3fY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
