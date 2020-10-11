@@ -13,7 +13,6 @@
 		F820CF6A24E6B8780090967B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820CF6924E6B8780090967B /* ArticleCell.swift */; };
 		F837470224E3FB4600A82A2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837470124E3FB4600A82A2D /* AppDelegate.swift */; };
 		F837470424E3FB4600A82A2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837470324E3FB4600A82A2D /* SceneDelegate.swift */; };
-		F837470624E3FB4600A82A2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837470524E3FB4600A82A2D /* ViewController.swift */; };
 		F837470924E3FB4600A82A2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F837470724E3FB4600A82A2D /* Main.storyboard */; };
 		F837470B24E3FB4A00A82A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F837470A24E3FB4A00A82A2D /* Assets.xcassets */; };
 		F837470E24E3FB4A00A82A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F837470C24E3FB4A00A82A2D /* LaunchScreen.storyboard */; };
@@ -50,7 +49,6 @@
 		F83746FE24E3FB4600A82A2D /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F837470124E3FB4600A82A2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F837470324E3FB4600A82A2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F837470524E3FB4600A82A2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F837470824E3FB4600A82A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F837470A24E3FB4A00A82A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F837470D24E3FB4A00A82A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,21 +113,20 @@
 		F837470024E3FB4600A82A2D /* NewsReader */ = {
 			isa = PBXGroup;
 			children = (
+				F837473124E3FBDE00A82A2D /* APIClient.swift */,
 				F837470124E3FB4600A82A2D /* AppDelegate.swift */,
-				F837470324E3FB4600A82A2D /* SceneDelegate.swift */,
-				F837470524E3FB4600A82A2D /* ViewController.swift */,
-				F820CF6724E69AD10090967B /* ArticlesViewController.swift */,
-				F86577122503C7D700311573 /* ArticleToReadLater.swift */,
-				F8EB94A424EBFC020061DA66 /* DetailViewController.swift */,
+				F820CF6324E575D80090967B /* Article.swift */,
 				F820CF6924E6B8780090967B /* ArticleCell.swift */,
 				F88FE85C250E738F004B3CBE /* ArticleCellRead.swift */,
-				F837473124E3FBDE00A82A2D /* APIClient.swift */,
-				F820CF6324E575D80090967B /* Article.swift */,
 				F820CF6524E575F00090967B /* ArticleStore.swift */,
-				F837470724E3FB4600A82A2D /* Main.storyboard */,
+				F820CF6724E69AD10090967B /* ArticlesViewController.swift */,
+				F86577122503C7D700311573 /* ArticleToReadLater.swift */,
 				F837470A24E3FB4A00A82A2D /* Assets.xcassets */,
-				F837470C24E3FB4A00A82A2D /* LaunchScreen.storyboard */,
+				F8EB94A424EBFC020061DA66 /* DetailViewController.swift */,
 				F837470F24E3FB4A00A82A2D /* Info.plist */,
+				F837470C24E3FB4A00A82A2D /* LaunchScreen.storyboard */,
+				F837470724E3FB4600A82A2D /* Main.storyboard */,
+				F837470324E3FB4600A82A2D /* SceneDelegate.swift */,
 			);
 			path = NewsReader;
 			sourceTree = "<group>";
@@ -290,7 +287,6 @@
 				F86577132503C7D700311573 /* ArticleToReadLater.swift in Sources */,
 				F8EB94A524EBFC020061DA66 /* DetailViewController.swift in Sources */,
 				F820CF6A24E6B8780090967B /* ArticleCell.swift in Sources */,
-				F837470624E3FB4600A82A2D /* ViewController.swift in Sources */,
 				F837470224E3FB4600A82A2D /* AppDelegate.swift in Sources */,
 				F837470424E3FB4600A82A2D /* SceneDelegate.swift in Sources */,
 				F820CF6824E69AD10090967B /* ArticlesViewController.swift in Sources */,
