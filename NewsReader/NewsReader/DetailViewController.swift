@@ -20,16 +20,7 @@ class DetailViewController: UIViewController {
     
     //var articleStore: ArticleStore!
     var article: Article!
-    //var article = articleStore.allArticles[indexPath.row]
-    /*func heightForView(text: String, width: CGFloat) -> CGFloat{
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
-        label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.text = text
 
-        label.sizeToFit()
-        return label.frame.height
-    }*/
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             let dateFormatter = DateFormatter()
