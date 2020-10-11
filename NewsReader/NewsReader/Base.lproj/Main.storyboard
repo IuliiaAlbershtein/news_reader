@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Articles-->
         <scene sceneID="hyr-qy-p9t">
             <objects>
                 <tableViewController id="SYi-Bf-6tv" customClass="ArticlesViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +90,7 @@
                             <outlet property="delegate" destination="SYi-Bf-6tv" id="M1j-fp-ep4"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="IGz-Ue-oEZ"/>
+                    <tabBarItem key="tabBarItem" title="Articles" image="square.fill.text.grid.1x2" catalog="system" id="IGz-Ue-oEZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="web-Zs-dBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="1947.826086956522" y="-44.196428571428569"/>
         </scene>
-        <!--FFFFF-->
+        <!--Settings-->
         <scene sceneID="180-ea-NhK">
             <objects>
                 <tableViewController id="iOP-kU-QnN" customClass="ArticleToReadLater" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,7 +230,7 @@
                             <outlet property="delegate" destination="iOP-kU-QnN" id="0ze-Lc-Hcv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="FFFFF" id="NOF-yC-fOc"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="NOF-yC-fOc"/>
                     <navigationItem key="navigationItem" id="zYc-vJ-PCt"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAG-9A-gqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,6 +258,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="square.fill.text.grid.1x2" catalog="system" width="128" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
