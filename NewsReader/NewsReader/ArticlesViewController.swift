@@ -27,11 +27,6 @@ class ArticlesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.contentInset.top = 10
-        //tableView.contentInset.top = UIApplication.sharedApplication().statusBarFrame.height
-        
-        //tableView.contentInset = UIEdgeInsets(top: 20, left: 0.0, bottom: 0.0, right: 0.0);
-        //tableView.scrollIndicatorInsets = tableView.contentInset
         
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action:
@@ -61,28 +56,20 @@ class ArticlesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*// Create an instance of UITableViewCell with default appearance
-         let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
-         */
-        // Get a new or recycled cell
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
-        // for: indexPath)
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell",
                                                  for: indexPath) as! ArticleCell
-        // Set the text on the cell with the description of the item
-        // that is at the nth index of items, where n = row this cell
-        // will appear in on the table view
+        
+        // Create a reference to the article, which is in the array
         let article = articleStore.allArticles[indexPath.row]
         
-        //cell.textLabel?.text = item.name
-        //cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-        let dateFormatter = DateFormatter()
+          let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_US")
         let formattedDate = dateFormatter.string(from: article.datePublished)
-        // Configure the cell with the Item
+        // Configure the cell with the Article
         cell.titleLabel.text = article.title
         cell.descriptionLabel.text = article.descr
         cell.dateLabel.text = "\(formattedDate)"
@@ -98,7 +85,7 @@ class ArticlesViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // If the triggered segue is the "showItem" segue
+        // If the triggered segue is the "showArticle" segue
         switch segue.identifier {
         case "showArticle":
             // Figure out which row was just tapped
@@ -115,22 +102,23 @@ class ArticlesViewController: UITableViewController {
         }
     }
     
+    // Button to save the article to read later
     @IBAction func ButtonClicked(_ sender: Any) {
 
-        if let row = tableView.indexPathForSelectedRow?.row {
-            // Get the item associated with this row and pass it along
-            let article = articleStore.allArticles[row]
-            let userDefaults = UserDefaults.standard
-            do {
-                let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: article, requiringSecureCoding: false)
-                userDefaults.set(encodedData, forKey: "article")
-                userDefaults.synchronize()
-                print("saving \(article.title)")
-            } catch {
-                print("error unknown velmi velmi")
-            }
-            
+        guard let row = tableView.indexPathForSelectedRow?.row else { return }
+        
+        // Get the item associated with this row and pass it along
+        let article = articleStore.allArticles[row]
+        let userDefaults = UserDefaults.standard
+        do {
+            let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: article, requiringSecureCoding: false)
+            userDefaults.set(encodedData, forKey: "article")
+            userDefaults.synchronize()
+            print("saving \(article.title)")
+        } catch {
+            print("error very unknown")
         }
+        
     }
     
 }
