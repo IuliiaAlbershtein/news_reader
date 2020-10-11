@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 //http://newsapi.org/v2/everything?q=Apple&from=2020-08-11&sortBy=popularity&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d
 
@@ -18,33 +17,52 @@ class Downloader {
         var request = URLRequest(url: URLData)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data: Data!, response: URLResponse!, error: Error!) -> Void in
-            if (error == nil) {
+            if error == nil {
                 // Success
                 let statusCode = (response as! HTTPURLResponse).statusCode
                 print("Success: \(statusCode)")
-                var json = JSON.null
-                do {
-                // This is your file-variable:
-                let rawJson = data
-                    json = try JSON(data: rawJson!)
-                } catch {
-                    print("Issue with data file")
-                }
-                let articles = json["articles"].arrayValue // array
                 
-                for articleData in articles {
-                    let date = articleData["publishedAt"].stringValue
-                    let dateFor: DateFormatter = DateFormatter()
-                    dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                
+                guard let json = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                    print("Cannot parse JSON")
+                    return
+                }
+
+                guard let articles = json["articles"] as? [Any] else {
+                    print("Cannot parse 'articles'. Field is not an array")
+                    return
+                }
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                
+                for articleRecord in articles {
+                    guard let articleJson = articleRecord as? [String:Any] else {
+                        print("Cannot parse article record")
+                        continue
+                    }
                     
+                    guard let dateString = articleJson["publishedAt"] as? String,
+                          let publishedAt = dateFormatter.date(from: dateString) else {
+                        print("Cannot parse 'publishedAt'")
+                        continue
+                    }
                     
-                    let yourDate: Date? = dateFor.date(from: date)
-                   // print("\(String(describing: yourDate))")
-                    //print("\(article["title"].stringValue)")
-                    let article = Article(articleData["title"].stringValue, articleData["description"].stringValue, articleData["content"].stringValue, yourDate!);
+                    guard let title = articleJson["title"] as? String,
+                          let description = articleJson["description"] as? String,
+                          let content = articleJson["content"] as? String else { continue }
+                    
+                    let article = Article(title, description, content, publishedAt)
+                    
                     articleList.addArticle(newArticle: article)
-                    let imageUrl = URL(string: articleData["urlToImage"].stringValue)
-                    loadImage(URL: imageUrl!, article: article)
+                    
+                    guard let imageUrlString = articleJson["urlToImage"] as? String,
+                          let imageUrl = URL(string: imageUrlString) else {
+                        print("Cannot parse 'urlToImage'")
+                        continue
+                    }
+                    
+                    loadImage(URL: imageUrl, article: article)
                 }
             }
             else {
