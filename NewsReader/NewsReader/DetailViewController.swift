@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
             dateFormatter.locale = Locale(identifier: "en_US")
-            let formattedDate = dateFormatter.string(from: article.datePublished)
+            let formattedDate = dateFormatter.string(from: article.publishedAt)
             titleDetail.text = article.title
             //titleDetail.  heightForView(text: article.title, width: 100.0)
             dateDetail.text = "\(formattedDate)"

@@ -57,7 +57,10 @@ class Downloader {
                       let description = articleJson["description"] as? String,
                       let content = articleJson["content"] as? String else { continue }
                 
-                let article = Article(title, description, content, publishedAt)
+                let article = Article(title: title,
+                                description: description,
+                                    content: content,
+                                publishedAt: publishedAt)
                 
                 articleList.addArticle(newArticle: article)
                 

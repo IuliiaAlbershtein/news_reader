@@ -37,10 +37,10 @@ class ArticleToReadLater: UITableViewController {
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
             dateFormatter.locale = Locale(identifier: "en_US")
-            let formattedDate = dateFormatter.string(from: decodedArticle.datePublished)
+            let formattedDate = dateFormatter.string(from: decodedArticle.publishedAt)
             // Configure the cell with the Item
             cellReadLater.titleReadLaterLabel.text = decodedArticle.title
-            cellReadLater.descriptionReadLaterLabel.text = decodedArticle.descr
+            cellReadLater.descriptionReadLaterLabel.text = decodedArticle.description
             cellReadLater.dateReadLaterLabel.text = "\(formattedDate)"
             cellReadLater.titleReadLaterLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             cellReadLater.titleReadLaterLabel.numberOfLines = 2

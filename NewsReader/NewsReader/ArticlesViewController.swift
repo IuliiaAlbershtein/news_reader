@@ -68,10 +68,10 @@ class ArticlesViewController: UITableViewController {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_US")
-        let formattedDate = dateFormatter.string(from: article.datePublished)
+        let formattedDate = dateFormatter.string(from: article.publishedAt)
         // Configure the cell with the Article
         cell.titleLabel.text = article.title
-        cell.descriptionLabel.text = article.descr
+        cell.descriptionLabel.text = article.description
         cell.dateLabel.text = "\(formattedDate)"
         cell.titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.titleLabel.numberOfLines = 2
