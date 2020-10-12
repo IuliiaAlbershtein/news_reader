@@ -7,79 +7,59 @@
 //
 
 import UIKit
-// creating of subclass
+
 class ArticlesViewController: UITableViewController {
-    // property of ArticleViewController
-    var articleStore: ArticleStore!
-    
-    
-    func downloadData(_ weblink: String) {
-        let url = URL(string: weblink)
-        
-        //var articleList = ArticleStore()
-        
-        Downloader.load(URLData: url!, articleList: articleStore)
-        do {
-            sleep(4)
-        }
-        print("\(articleStore.allArticles)")
-    }
-    
+
+    private let articleStore = ArticleStore()
+    private let dateFormatter = DateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.refreshControl = UIRefreshControl()
-        tableView.refreshControl?.addTarget(self, action:
-            #selector(handleRefreshControl),
-                                            for: .valueChanged)
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
         
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self,
+                                    action: #selector(handleRefreshControl),
+                                       for: .valueChanged)
         
         tableView.rowHeight = 190
         
         downloadData("http://newsapi.org/v2/everything?q=Apple&sortBy=popularity&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
-        
-    }
-    @objc func handleRefreshControl() {
-        print("hghghg")
-        articleStore.removeArticles()
-        
-        downloadData("http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
-        tableView.reloadData()
-        tableView.refreshControl?.endRefreshing()
     }
     
     override func tableView(_ tableView: UITableView,
-                            numberOfRowsInSection section: Int) -> Int {
+          numberOfRowsInSection section: Int) -> Int {
+        
         return articleStore.allArticles.count
     }
     
     
     override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+                 cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell",
-                                                 for: indexPath) as! ArticleCell
+                                                            for: indexPath) as! ArticleCell
         
-        // Create a reference to the article, which is in the array
+        // Create call for the article in the array
         let article = articleStore.allArticles[indexPath.row]
-        
-          let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale(identifier: "en_US")
+
         let formattedDate = dateFormatter.string(from: article.publishedAt)
+
         // Configure the cell with the Article
         cell.titleLabel.text = article.title
         cell.descriptionLabel.text = article.description
-        cell.dateLabel.text = "\(formattedDate)"
-        cell.titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.dateLabel.text = formattedDate
+        cell.titleLabel.lineBreakMode = .byWordWrapping
         cell.titleLabel.numberOfLines = 2
-        cell.descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.descriptionLabel.lineBreakMode = .byWordWrapping
         cell.descriptionLabel.numberOfLines = 4
         cell.descriptionLabel.adjustsFontSizeToFitWidth = false
         cell.descriptionLabel.lineBreakMode = .byTruncatingTail
         cell.newsImageView.image = article.image
+        
         return cell
     }
     
@@ -93,12 +73,30 @@ class ArticlesViewController: UITableViewController {
                 
                 // Get the item associated with this row and pass it along
                 let article = articleStore.allArticles[row]
-                let detailViewController
-                    = segue.destination as! DetailViewController
+                let detailViewController = segue.destination as! DetailViewController
                 detailViewController.article = article
             }
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
+    }
+    
+    private func downloadData(_ urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        Downloader.load(URLData: url, articleList: articleStore)
+        
+        do {
+            sleep(4)
+        }
+        print("\(articleStore.allArticles)")
+    }
+    
+    @objc private func handleRefreshControl() {
+        articleStore.removeArticles()
+        
+        downloadData("http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
+        tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
     }
 }
