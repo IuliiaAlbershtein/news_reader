@@ -20,6 +20,7 @@
 		F837472424E3FB4A00A82A2D /* NewsReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837472324E3FB4A00A82A2D /* NewsReaderUITests.swift */; };
 		F837473224E3FBDE00A82A2D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837473124E3FBDE00A82A2D /* APIClient.swift */; };
 		F86F91862534C80800A2183F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F91852534C80800A2183F /* Consts.swift */; };
+		F86F918E2534CD1500A2183F /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F918D2534CD1500A2183F /* UrlImageView.swift */; };
 		F8EB94A524EBFC020061DA66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB94A424EBFC020061DA66 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		F837472524E3FB4A00A82A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F837473124E3FBDE00A82A2D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F86F91852534C80800A2183F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		F86F918D2534CD1500A2183F /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
 		F8EB94A424EBFC020061DA66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				F837470C24E3FB4A00A82A2D /* LaunchScreen.storyboard */,
 				F837470724E3FB4600A82A2D /* Main.storyboard */,
 				F837470324E3FB4600A82A2D /* SceneDelegate.swift */,
+				F86F918D2534CD1500A2183F /* UrlImageView.swift */,
 			);
 			path = NewsReader;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				F820CF6A24E6B8780090967B /* ArticleCell.swift in Sources */,
 				F837470224E3FB4600A82A2D /* AppDelegate.swift in Sources */,
 				F837470424E3FB4600A82A2D /* SceneDelegate.swift in Sources */,
+				F86F918E2534CD1500A2183F /* UrlImageView.swift in Sources */,
 				F820CF6824E69AD10090967B /* ArticlesViewController.swift in Sources */,
 				F837473224E3FBDE00A82A2D /* APIClient.swift in Sources */,
 				F820CF6624E575F00090967B /* ArticleStore.swift in Sources */,

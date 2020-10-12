@@ -14,13 +14,13 @@ class Article {
     let description: String
     let content: String
     let publishedAt: Date
-    var image: UIImage?
+    let imageUrl: URL
     
-    init(title: String, description: String, content: String, publishedAt: Date) {
+    init(title: String, description: String, content: String, publishedAt: Date, imageUrl: URL) {
         self.title = title
         self.description = description
         self.content = content
         self.publishedAt = publishedAt
-        self.image = nil
+        self.imageUrl = imageUrl
     }
 }

@@ -55,43 +55,20 @@ class Downloader {
                       let description = articleJson["description"] as? String,
                       let content = articleJson["content"] as? String else { continue }
                 
-                let article = Article(title: title,
-                                description: description,
-                                    content: content,
-                                publishedAt: publishedAt)
-                
-                articleList.addArticle(newArticle: article)
-                
                 guard let imageUrlString = articleJson["urlToImage"] as? String,
                       let imageUrl = URL(string: imageUrlString) else {
                     print("Cannot parse 'urlToImage'")
                     continue
                 }
+
+                let article = Article(title: title,
+                                description: description,
+                                    content: content,
+                                publishedAt: publishedAt,
+                                   imageUrl: imageUrl)
                 
-                loadImage(URL: imageUrl, article: article)
+                articleList.addArticle(newArticle: article)
             }
-        })
-        task.resume()
-    }
-    class func loadImage(URL: URL, article: Article) {
-        let session = URLSession(configuration: .default)
-        var request = URLRequest(url: URL)
-        request.httpMethod = "GET"
-        
-        let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-            
-            guard let response = response as? HTTPURLResponse else { return }
-            guard let data = data, response.statusCode == 200 else {
-                if let error = error {
-                    print("Invalid url response: \(error.localizedDescription)")
-                } else {
-                    print("Invalid url response: \(response.statusCode)")
-                }
-                return
-            }
-            
-            let image = UIImage(data: data)
-            article.image = image
         })
         task.resume()
     }

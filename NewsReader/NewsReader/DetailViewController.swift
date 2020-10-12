@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var imageDetailView: UIImageView!
+    @IBOutlet weak var imageDetailView: UrlImageView!
     @IBOutlet weak var titleDetail: UILabel!
     @IBOutlet weak var dateDetail: UILabel!
     @IBOutlet weak var contentDetail: UILabel!
@@ -28,6 +28,6 @@ class DetailViewController: UIViewController {
         titleDetail.text = article.title
         dateDetail.text = formattedDate
         contentDetail.text = article.content
-        imageDetailView.image = article.image
+        imageDetailView.url = article.imageUrl
     }
 }

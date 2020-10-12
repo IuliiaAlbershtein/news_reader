@@ -16,5 +16,5 @@ class ArticleCell: UITableViewCell {
     
     @IBOutlet var dateLabel: UILabel!
     
-    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var newsImageView: UrlImageView!
 }

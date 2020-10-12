@@ -58,7 +58,7 @@ class ArticlesViewController: UITableViewController {
         cell.descriptionLabel.numberOfLines = 4
         cell.descriptionLabel.adjustsFontSizeToFitWidth = false
         cell.descriptionLabel.lineBreakMode = .byTruncatingTail
-        cell.newsImageView.image = article.image
+        cell.newsImageView.url = article.imageUrl
         
         return cell
     }
