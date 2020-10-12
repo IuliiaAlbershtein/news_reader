@@ -7,32 +7,27 @@
 //
 
 import UIKit
+
 class DetailViewController: UIViewController {
+    
     @IBOutlet weak var imageDetailView: UIImageView!
-    
     @IBOutlet weak var titleDetail: UILabel!
-    
     @IBOutlet weak var dateDetail: UILabel!
-    
-    //@IBOutlet weak var descriptionDetail: UILabel!
-    
     @IBOutlet weak var contentDetail: UILabel!
     
-    //var articleStore: ArticleStore!
     var article: Article!
 
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .none
-            dateFormatter.locale = Locale(identifier: "en_US")
-            let formattedDate = dateFormatter.string(from: article.publishedAt)
-            titleDetail.text = article.title
-            //titleDetail.  heightForView(text: article.title, width: 100.0)
-            dateDetail.text = "\(formattedDate)"
-            //descriptionDetail.text = article.description
-            contentDetail.text = article.content
-            imageDetailView.image = article.image
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        let formattedDate = dateFormatter.string(from: article.publishedAt)
+        titleDetail.text = article.title
+        dateDetail.text = formattedDate
+        contentDetail.text = article.content
+        imageDetailView.image = article.image
+    }
 }
