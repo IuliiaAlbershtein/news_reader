@@ -101,24 +101,4 @@ class ArticlesViewController: UITableViewController {
             preconditionFailure("Unexpected segue identifier.")
         }
     }
-    
-    // Button to save the article to read later
-    @IBAction func ButtonClicked(_ sender: Any) {
-
-        guard let row = tableView.indexPathForSelectedRow?.row else { return }
-        
-        // Get the item associated with this row and pass it along
-        let article = articleStore.allArticles[row]
-        let userDefaults = UserDefaults.standard
-        do {
-            let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: article, requiringSecureCoding: false)
-            userDefaults.set(encodedData, forKey: "article")
-            userDefaults.synchronize()
-            print("saving \(article.title)")
-        } catch {
-            print("error very unknown")
-        }
-        
-    }
-    
 }

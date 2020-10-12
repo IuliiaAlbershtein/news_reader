@@ -49,27 +49,17 @@
                                                 <constraint firstAttribute="width" constant="130" id="vvM-gX-NHL"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdQ-Oz-xBT">
-                                            <rect key="frame" x="20" y="144" width="130" height="30"/>
-                                            <state key="normal" title="Read Later"/>
-                                            <connections>
-                                                <action selector="ButtonClicked:" destination="SYi-Bf-6tv" eventType="touchDown" id="2PX-N3-rtA"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Lac-pp-1Gv" firstAttribute="bottom" secondItem="5VD-ao-PgQ" secondAttribute="bottomMargin" id="5RI-hk-HaA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Qqn-ej-t3X" secondAttribute="trailing" id="7AV-LM-hJg"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="leading" secondItem="5VD-ao-PgQ" secondAttribute="leadingMargin" id="AC6-dq-gEy"/>
                                         <constraint firstItem="Mju-tI-Ozc" firstAttribute="leading" secondItem="5VD-ao-PgQ" secondAttribute="leadingMargin" id="AwU-CQ-SeZ"/>
-                                        <constraint firstItem="GdQ-Oz-xBT" firstAttribute="leading" secondItem="Mju-tI-Ozc" secondAttribute="leading" id="BIX-ux-fFY"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="top" secondItem="5VD-ao-PgQ" secondAttribute="topMargin" id="GLh-8w-XvH"/>
                                         <constraint firstItem="Qqn-ej-t3X" firstAttribute="top" secondItem="o9P-R3-av6" secondAttribute="bottom" constant="5" id="Hgg-BC-DDr"/>
                                         <constraint firstItem="Mju-tI-Ozc" firstAttribute="top" secondItem="o9P-R3-av6" secondAttribute="bottom" constant="10" id="LAe-nK-V6I"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="o9P-R3-av6" secondAttribute="trailing" id="VN7-11-LHe"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Lac-pp-1Gv" secondAttribute="trailing" id="hCy-5N-ELT"/>
-                                        <constraint firstAttribute="bottom" secondItem="GdQ-Oz-xBT" secondAttribute="bottom" id="jgY-Ox-3Gm"/>
-                                        <constraint firstItem="GdQ-Oz-xBT" firstAttribute="trailing" secondItem="Mju-tI-Ozc" secondAttribute="trailing" id="oJw-aL-jhA"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Mju-tI-Ozc" secondAttribute="bottom" constant="40" id="qtb-BR-zGO"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="leading" secondItem="5VD-ao-PgQ" secondAttribute="leadingMargin" id="rBN-qE-dLh"/>
                                         <constraint firstItem="o9P-R3-av6" firstAttribute="top" secondItem="5VD-ao-PgQ" secondAttribute="topMargin" id="tLz-Fe-caU"/>
