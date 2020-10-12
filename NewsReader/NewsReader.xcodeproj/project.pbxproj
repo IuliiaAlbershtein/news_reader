@@ -19,6 +19,7 @@
 		F837471924E3FB4A00A82A2D /* NewsReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837471824E3FB4A00A82A2D /* NewsReaderTests.swift */; };
 		F837472424E3FB4A00A82A2D /* NewsReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837472324E3FB4A00A82A2D /* NewsReaderUITests.swift */; };
 		F837473224E3FBDE00A82A2D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837473124E3FBDE00A82A2D /* APIClient.swift */; };
+		F86F91862534C80800A2183F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F91852534C80800A2183F /* Consts.swift */; };
 		F8EB94A524EBFC020061DA66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB94A424EBFC020061DA66 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		F837472324E3FB4A00A82A2D /* NewsReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsReaderUITests.swift; sourceTree = "<group>"; };
 		F837472524E3FB4A00A82A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F837473124E3FBDE00A82A2D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F86F91852534C80800A2183F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		F8EB94A424EBFC020061DA66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				F820CF6524E575F00090967B /* ArticleStore.swift */,
 				F820CF6724E69AD10090967B /* ArticlesViewController.swift */,
 				F837470A24E3FB4A00A82A2D /* Assets.xcassets */,
+				F86F91852534C80800A2183F /* Consts.swift */,
 				F8EB94A424EBFC020061DA66 /* DetailViewController.swift */,
 				F837470F24E3FB4A00A82A2D /* Info.plist */,
 				F837470C24E3FB4A00A82A2D /* LaunchScreen.storyboard */,
@@ -285,6 +288,7 @@
 				F820CF6824E69AD10090967B /* ArticlesViewController.swift in Sources */,
 				F837473224E3FBDE00A82A2D /* APIClient.swift in Sources */,
 				F820CF6624E575F00090967B /* ArticleStore.swift in Sources */,
+				F86F91862534C80800A2183F /* Consts.swift in Sources */,
 				F820CF6424E575D80090967B /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

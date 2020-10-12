@@ -8,8 +8,6 @@
 
 import UIKit
 
-//http://newsapi.org/v2/everything?q=Apple&from=2020-08-11&sortBy=popularity&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d
-
 class Downloader {
     class func load(URLData: URL, articleList: ArticleStore) {
 

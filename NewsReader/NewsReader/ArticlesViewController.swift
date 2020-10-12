@@ -27,7 +27,7 @@ class ArticlesViewController: UITableViewController {
         
         tableView.rowHeight = 190
         
-        downloadData("http://newsapi.org/v2/everything?q=Apple&sortBy=popularity&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
+        downloadData(Consts.newsApiApple)
     }
     
     override func tableView(_ tableView: UITableView,
@@ -63,7 +63,6 @@ class ArticlesViewController: UITableViewController {
         return cell
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // If the triggered segue is the "showArticle" segue
         switch segue.identifier {
@@ -95,7 +94,7 @@ class ArticlesViewController: UITableViewController {
     @objc private func handleRefreshControl() {
         articleStore.removeArticles()
         
-        downloadData("http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=d4994d8a3eec48658aab1d9ffd9dd49d")
+        downloadData(Consts.newsApiTechCrunch)
         tableView.reloadData()
         tableView.refreshControl?.endRefreshing()
     }
